@@ -27,6 +27,15 @@ class BookController {
         $userDelete = $this -> libro -> delete($id_libro);
         header('Location: index.php');
     }
+
+    public function create(){
+        include __DIR__."/../views/usuarios/create.php";
+    }
+
+    public function store($book){
+        $userCreate = $this -> libro -> store($book);
+        header('Location: index.php');
+    }
 }
 
 ?>

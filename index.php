@@ -34,6 +34,12 @@
             case "eliminar":
                 $libro -> delete($id_libro);
                 break;
+            case "create":
+                $libro -> create();
+                break;
+            case "store":
+                $libro -> store($_POST);
+                break;
         }
 
     ?>

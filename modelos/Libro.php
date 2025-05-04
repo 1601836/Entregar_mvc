@@ -27,6 +27,11 @@ class Libro{
         $stmt = $this->conexion->prepare("delete from libro where id_libro=?");
         return $stmt -> execute([$id_libro]); 
     } 
+    public function store($book){
+        $query = "insert into libro(id_libro,nombre,genero,fecha_publicada,autor) values(?,?,?,?,?)";
+        $stmt = $this -> conexion -> prepare($query);
+        return $stmt -> execute([$book['id_libro'],$book['nombre'],$book['genero'],$book['fecha_publicada'],$book['autor']]);
+    }
 }
 
 ?>
