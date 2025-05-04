@@ -27,9 +27,12 @@
                 $id_libro = $_GET['id_libro'];
                 $nombre = $_POST['nombre'];
                 $genero = $_POST['genero'];
-                $fecha_publicacion = $_POST['fecha_publicacion'];
+                $fecha_publicada = $_POST['fecha_publicada'];
                 $autor = $_POST['autor'];
-                $libro->update($id_libro,$nombre,$genero,$fecha_publicacion,$autor);
+                $libro->update($id_libro,$nombre,$genero,$fecha_publicada,$autor);
+                break;
+            case "eliminar":
+                $libro -> delete($id_libro);
                 break;
         }
 

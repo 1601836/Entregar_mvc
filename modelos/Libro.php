@@ -22,6 +22,11 @@ class Libro{
         $stmt = $this->conexion->prepare("UPDATE libro SET nombre=?, genero=?,fecha_publicada=?,autor=? WHERE id_libro=?");
         return $stmt->execute([$nombre, $genero, $fecha_publicada, $autor, $id_libro]);
     }
+
+    public function delete($id_libro){
+        $stmt = $this->conexion->prepare("delete from libro where id_libro=?");
+        return $stmt -> execute([$id_libro]); 
+    } 
 }
 
 ?>

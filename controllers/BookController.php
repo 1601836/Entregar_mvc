@@ -18,10 +18,15 @@ class BookController {
         include __DIR__ ."/../views/usuarios/editar.php";
     }
 
-    public function update($id_libro,$nombre,$genero,$fecha_publicacion,$autor){
-        $userUpdate = $this -> libro -> update($id_libro,$nombre,$genero,$fecha_publicacion,$autor);
+    public function update($id_libro,$nombre,$genero,$fecha_publicada,$autor){
+        $userUpdate = $this -> libro -> update($id_libro,$nombre,$genero,$fecha_publicada,$autor);
         header('Location: index.php');
     } 
+
+    public function delete($id_libro){
+        $userDelete = $this -> libro -> delete($id_libro);
+        header('Location: index.php');
+    }
 }
 
 ?>
